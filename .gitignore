@@ -8,5 +8,55 @@
 *.war
 *.ear
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+.DS_Store
+.classpath
+.project
+.tern-project
+.springBeans
+.settings/
+target/
+
+
+/bin/
+
+*~
+.#*
+.git
+*#
+*.sh
+
+# os x stuff
+*Thumbs.db*
+*.DS_Store
+
+# Build artifacts
+build
+out
+mongo*.jar
+
+# Eclipse files
+.classpath
+.project
+.settings
+
+# Intellij IDEA files
+*.ipr
+*.iws
+*.iml
+*.idea
+workspace.xml
+atlassian-ide-plugin.xml
+
+# gradle
+.gradle
+
+# code review
+codereview.rc
+
+# local settings
+**/gradle.properties
+
+# doc settings
+docs/reference/public
+docs/landing/public
+docs/hugo*
