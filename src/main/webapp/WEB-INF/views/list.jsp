@@ -18,6 +18,7 @@
 		    <th>ID</th>
 			<th>Name</th>
 			<th>Age</th>
+			<th>Country</th>
 			<th>State</th>
 			<th>JUGS</th>
 			<th>Description</th>
@@ -29,6 +30,7 @@
 				<td>${people._id}</td>
 				<td>${people.name}</td>
 				<td>${people.age}</td>
+				<td>${people.address.country}</td>
 				<td>${people.address.state}</td>
 				<td>${people.jugs.get(0).name}</td>
 				<td>

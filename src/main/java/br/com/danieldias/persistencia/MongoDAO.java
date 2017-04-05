@@ -16,9 +16,9 @@ import com.mongodb.client.MongoCursor;
  */
 public interface MongoDAO<T> {
 
-	void inserir(T entidade) throws MongoException;
-	void alterar(T entidade) throws MongoException;
-	void deletar(ObjectId _id) throws MongoQueryException;
-	MongoCursor<Document> listarTodos() throws MongoCursorNotFoundException,MongoQueryException;
-	Document porId(ObjectId _id) throws MongoQueryException;
+	void insert(T entity) throws MongoException;
+	void change(T entity) throws MongoException;
+	void delete(ObjectId _id) throws MongoQueryException;
+	MongoCursor<Document> listAll() throws MongoCursorNotFoundException,MongoQueryException;
+	Document byId(ObjectId _id) throws MongoQueryException;
 }

@@ -15,7 +15,8 @@
 
 	 Name: <input type="text" name="name" /><br /><br />
     Age: <input type="number" name="age"/><br /> <br />
-   State: <input type="text" name="address"/><br /><br />
+    Country: <input type="text" name="country"/><br /><br />
+   State: <input type="text" name="state"/><br /><br />
    JUGS:<input type="radio" name="jugs" value="SouJava"/>SouJava
    <input type="radio" name="jugs" value="RioJug"/>RioJug
    <input type="radio" name="jugs" value="SouJava Campinas"/>SouJava Campinas<br /><br />

@@ -1,5 +1,6 @@
 package br.com.danieldias.model;
 
+import javax.ws.rs.BeanParam;
 import javax.ws.rs.FormParam;
 
 import org.bson.types.ObjectId;
@@ -14,19 +15,19 @@ public class People {
 
 	@FormParam("_id")
 	private ObjectId _id;
-	
+
 	@FormParam("name")
 	private String name;
-	
+
 	@FormParam("age")
 	private int age;
 
-	@FormParam("address")
+	@BeanParam
 	private Address address;
-	
+
 	@FormParam("jugs")
 	private String jugs;
-	
+
 	@FormParam("description")
 	private String description;
 
@@ -39,8 +40,9 @@ public class People {
 	}
 
 	public People() {
+	    this("",null,"",0,"");
 	}
-	
+
 	public People(String name, Address address,
 			String description,int age,
 			String jugs) {

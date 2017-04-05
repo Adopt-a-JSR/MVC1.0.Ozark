@@ -11,10 +11,10 @@ import com.mongodb.MongoClient;
 public class MongoDBFactory {
 
 	public static MongoClient createConnection() {
-		MongoClient conexao = null;
-		if(conexao == null) {
-			conexao = new MongoClient();
+		MongoClient connection = null;
+		if(connection == null) {
+		    connection = new MongoClient();
 		}
-		return conexao;
+		return connection;
 	}
 }

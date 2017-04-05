@@ -30,7 +30,7 @@ public class PeopleController {
 	Models models;
 
 	@Inject
-	MongoDAO<People> pessoaDao;
+	MongoDAO<People> peopleDao;
 
 	@GET
 	@Path("new")
@@ -42,34 +42,34 @@ public class PeopleController {
 	@Path("show")
 	@View("list.jsp")
 	public void list() {
-	  this.models.put("list", pessoaDao.listarTodos());
+	  this.models.put("list", peopleDao.listAll());
 	}
 
 	@POST
 	@Path("add")
-	public String adicionar(@BeanParam People pessoa) {
-		pessoaDao.inserir(pessoa);
+	public String adicionar(@BeanParam People people) {
+		peopleDao.insert(people);
 		return "redirect:mvc/show";		
 	}
 
 	@POST
 	@Path("update")
-	public String update(@BeanParam People pessoa) {
-		pessoaDao.alterar(pessoa);
+	public String update(@BeanParam People people) {
+		peopleDao.change(people);
 		return "redirect:mvc/show";
 	}
 
 	@GET
 	@Path("update/{_id}")
 	public Viewable update(@PathParam("_id") ObjectId _id) {
-		this.models.put("update",pessoaDao.porId(_id));
+		this.models.put("update",peopleDao.byId(_id));
 		return new Viewable("change.jsp",models);
 	}
 
 	@GET
 	@Path("remove/{_id}")
-	public String deletar(@PathParam("_id") ObjectId _id) {
-		pessoaDao.deletar(_id);
+	public String delete(@PathParam("_id") ObjectId _id) {
+	    peopleDao.delete(_id);
 		return "redirect:mvc/show";
 	}
 }
