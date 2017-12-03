@@ -19,7 +19,7 @@ import java.util.Objects;
 @Entity
 public class Person {
 
-    @FormParam("_id")
+    @FormParam("id")
     @Id
     private String id;
 

@@ -11,7 +11,7 @@
 		<fieldset style="width: 400px">
             <legend>Change of Data</legend>
    
-		<input type="text" name="_id" value="${update._id }" hidden="true"><br/><br />
+		<input type="text" name="id" value="${update.id }" hidden="true"><br/><br />
       Name:<input type="text" name="name" value="${update.name }"><br/><br /> 
       Age: <input type="number" name="age" value="${update.age }"/><br /> <br />
       Country:<input type="text" name="country"  value="${update.address.country}"><br /><br/>

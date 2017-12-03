@@ -27,7 +27,7 @@
 		</tr>
 		<c:forEach items="${list}" var="person">
 			<tr>
-				<td>${person._id}</td>
+				<td>${person.id}</td>
 				<td>${person.name}</td>
 				<td>${person.age}</td>
 				<td>${person.address.country}</td>
@@ -36,8 +36,8 @@
 				<td>
 				<textarea rows="10" cols="60" name="description" disabled="disabled"> ${person.jugs.get(0).description} </textarea>
 				</td>
-				<td><a href="update/${person._id }">Edit</a></td>
-				<td><a href="remove/${person._id}">Delete</a></td>
+				<td><a href="update/${person.id }">Edit</a></td>
+				<td><a href="remove/${person.id}">Delete</a></td>
 			</tr>
 		</c:forEach>
 	</table>      
