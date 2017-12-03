@@ -13,7 +13,7 @@ import javax.enterprise.inject.Produces;
 public class DocumentCollectionProducer {
 
 
-    private static final String DOCUMENT_COLLECTION = "PEOPLE";
+    private static final String DOCUMENT_COLLECTION = "people";
 
     @Produces
     @ApplicationScoped
