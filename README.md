@@ -4,7 +4,7 @@ Simple example of using JSR-371 together with MongoDB to do CRUD operations.
 
 #Resources Used
  - Java 8
-- [Glassfish-4.1-b17](http://download.oracle.com/glassfish/4.1/nightly/glassfish-4.1-b17-09_15_2015.zip) or [Payara Server 164](http://cta-redirect.hubspot.com/cta/redirect/334594/6c4914a9-26de-4da5-b0fe-cd9f01ed1bea)
+- [Glassfish-5.0](http://download.oracle.com/glassfish/5.0/release/glassfish-5.0-web.zip) or [Payara Server 164](http://cta-redirect.hubspot.com/cta/redirect/334594/6c4914a9-26de-4da5-b0fe-cd9f01ed1bea)
 - Apache Maven 3.3.9
 - MongoDB 3.4
 - Eclipse  Oxygen Release Milestone 3 (4.7.0 M3)
