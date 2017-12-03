@@ -4,6 +4,9 @@ import javax.ws.rs.BeanParam;
 import javax.ws.rs.FormParam;
 
 import org.bson.types.ObjectId;
+import org.jnosql.artemis.Column;
+import org.jnosql.artemis.Entity;
+import org.jnosql.artemis.Id;
 
 /**
  * @author daniel
@@ -11,82 +14,89 @@ import org.bson.types.ObjectId;
  * daniel.dias.analistati@gmail.com
  * twitter:@danieldiasjava
  */
+@Entity
 public class Person {
 
-	@FormParam("_id")
-	private ObjectId _id;
+    @FormParam("_id")
+    @Id
+    private String id;
 
-	@FormParam("name")
-	private String name;
+    @FormParam("name")
+    @Column
+    private String name;
 
-	@FormParam("age")
-	private int age;
+    @FormParam("age")
+    @Column
+    private int age;
 
-	@BeanParam
-	private Address address;
+    @BeanParam
+    @Column
+    private Address address;
 
-	@FormParam("jugs")
-	private String jugs;
+    @FormParam("jugs")
+    @Column
+    private String jugs;
 
-	@FormParam("description")
-	private String description;
+    @FormParam("description")
+    @Column
+    private String description;
 
-	public String getdescription() {
-		return description;
-	}
+    public String getdescription() {
+        return description;
+    }
 
-	public void setdescription(String description) {
-		this.description = description;
-	}
+    public void setdescription(String description) {
+        this.description = description;
+    }
 
-	public Person() {
-	    this("",null,"",0,"");
-	}
+    public Person() {
+        this("", null, "", 0, "");
+    }
 
-	public Person(String name, Address address,
-				  String description, int age,
-				  String jugs) {
-		super();
-		this.name = name;
-		this.address = address;
-		this.description = description;
-		this.age = age;
-		this.jugs = jugs;
-	}
+    public Person(String name, Address address,
+                  String description, int age,
+                  String jugs) {
+        super();
+        this.name = name;
+        this.address = address;
+        this.description = description;
+        this.age = age;
+        this.jugs = jugs;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public Address getAddress() {
-		return address;
-	}
+    public Address getAddress() {
+        return address;
+    }
 
-	public void setAddress(Address address) {
-		this.address = address;
-	}
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 
-	public ObjectId get_id() {
-		return _id;
-	}
+    public ObjectId get_id() {
+        return _id;
+    }
 
-	public int getAge() {
-		return age;
-	}
+    public int getAge() {
+        return age;
+    }
 
-	public void setAge(int age) {
-		this.age = age;
-	}
+    public void setAge(int age) {
+        this.age = age;
+    }
 
-	public String getJugs() {
-		return jugs;
-	}
+    public String getJugs() {
+        return jugs;
+    }
 
-	public void setJugs(String jugs) {
-		this.jugs = jugs;
-	}
+    public void setJugs(String jugs) {
+        this.jugs = jugs;
+    }
 }
