@@ -2,6 +2,7 @@ package br.com.danieldias.controller;
 
 import br.com.danieldias.model.Person;
 import br.com.danieldias.persistence.PersonRepository;
+import org.bson.types.ObjectId;
 import org.jnosql.artemis.Database;
 import org.jnosql.artemis.DatabaseType;
 
@@ -69,7 +70,8 @@ public class PersonController {
 
     @GET
     @Path("update/{id}")
-    public Viewable update(@PathParam("id") String id) {
+    public Viewable update(@PathParam("id") ObjectId id) {
+
         Optional<Person> person = repository.findById(id);
         this.models.put("update", person.orElseThrow(NOT_FOUND_EXCEPTION));
         return new Viewable("change.jsp", models);
@@ -77,7 +79,7 @@ public class PersonController {
 
     @GET
     @Path("remove/{id}")
-    public String delete(@PathParam("id") String id) {
+    public String delete(@PathParam("id") ObjectId id) {
         repository.deleteById(id);
         return "redirect:mvc/show";
     }

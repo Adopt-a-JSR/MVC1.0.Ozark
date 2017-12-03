@@ -1,13 +1,12 @@
 package br.com.danieldias.model;
 
-import javax.ws.rs.BeanParam;
-import javax.ws.rs.FormParam;
-
 import org.bson.types.ObjectId;
 import org.jnosql.artemis.Column;
 import org.jnosql.artemis.Entity;
 import org.jnosql.artemis.Id;
 
+import javax.ws.rs.BeanParam;
+import javax.ws.rs.FormParam;
 import java.util.Objects;
 
 /**
@@ -21,7 +20,7 @@ public class Person {
 
     @FormParam("id")
     @Id
-    private String id;
+    private ObjectId id;
 
     @FormParam("name")
     @Column
@@ -43,7 +42,7 @@ public class Person {
     @Column
     private String description;
 
-    public String getId() {
+    public ObjectId getId() {
         return id;
     }
 
