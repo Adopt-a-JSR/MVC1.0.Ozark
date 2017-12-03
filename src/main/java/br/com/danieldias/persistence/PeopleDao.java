@@ -1,10 +1,11 @@
-package br.com.danieldias.persistencia;
+package br.com.danieldias.persistence;
 
 import static com.mongodb.client.model.Filters.eq;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.danieldias.model.Person;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 
@@ -16,7 +17,6 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 
 import br.com.danieldias.commons.Constants;
-import br.com.danieldias.model.People;
 
 /**
  * @author daniel
@@ -24,7 +24,7 @@ import br.com.danieldias.model.People;
  * daniel.dias.analistati@gmail.com
  * twitter:@danieldiasjava
  */
-public class PeopleDao implements MongoDAO<People> {
+public class PeopleDao implements MongoDAO<Person> {
 
 	MongoClient connection;
 	MongoCollection<Document> collectionPeople;
@@ -37,7 +37,7 @@ public class PeopleDao implements MongoDAO<People> {
 	}
 
 	@Override
-	public void insert(People entity) throws MongoException {
+	public void insert(Person entity) throws MongoException {
 
 		List<Document> jugs = new ArrayList<>();
 		jugs.add(new Document(Constants.NAME,entity.getJugs())
@@ -54,7 +54,7 @@ public class PeopleDao implements MongoDAO<People> {
 	}
 
 	@Override
-	public void change(People entity) throws MongoException {
+	public void change(Person entity) throws MongoException {
 		 
 		collectionPeople.updateOne(byId(entity.get_id()),
 				new Document("$set",

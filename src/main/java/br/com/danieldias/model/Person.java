@@ -11,7 +11,7 @@ import org.bson.types.ObjectId;
  * daniel.dias.analistati@gmail.com
  * twitter:@danieldiasjava
  */
-public class People {
+public class Person {
 
 	@FormParam("_id")
 	private ObjectId _id;
@@ -39,13 +39,13 @@ public class People {
 		this.description = description;
 	}
 
-	public People() {
+	public Person() {
 	    this("",null,"",0,"");
 	}
 
-	public People(String name, Address address,
-			String description,int age,
-			String jugs) {
+	public Person(String name, Address address,
+				  String description, int age,
+				  String jugs) {
 		super();
 		this.name = name;
 		this.address = address;

@@ -1,4 +1,4 @@
-package br.com.danieldias.persistencia;
+package br.com.danieldias.persistence;
 
 import org.bson.Document;
 import org.bson.types.ObjectId;

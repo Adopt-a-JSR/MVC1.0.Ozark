@@ -13,8 +13,8 @@ import javax.ws.rs.PathParam;
 
 import org.bson.types.ObjectId;
 
-import br.com.danieldias.model.People;
-import br.com.danieldias.persistencia.MongoDAO;
+import br.com.danieldias.model.Person;
+import br.com.danieldias.persistence.MongoDAO;
 
 /**
  * @author daniel
@@ -24,13 +24,13 @@ import br.com.danieldias.persistencia.MongoDAO;
  */
 @Controller
 @Path("mvc")
-public class PeopleController {
+public class PersonController {
 
 	@Inject
 	Models models;
 
 	@Inject
-	MongoDAO<People> peopleDao;
+	MongoDAO<Person> peopleDao;
 
 	@GET
 	@Path("new")
@@ -47,15 +47,15 @@ public class PeopleController {
 
 	@POST
 	@Path("add")
-	public String adicionar(@BeanParam People people) {
-		peopleDao.insert(people);
+	public String adicionar(@BeanParam Person person) {
+		peopleDao.insert(person);
 		return "redirect:mvc/show";		
 	}
 
 	@POST
 	@Path("update")
-	public String update(@BeanParam People people) {
-		peopleDao.change(people);
+	public String update(@BeanParam Person person) {
+		peopleDao.change(person);
 		return "redirect:mvc/show";
 	}
 
