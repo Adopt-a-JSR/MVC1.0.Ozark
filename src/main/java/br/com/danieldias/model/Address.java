@@ -4,6 +4,7 @@ import org.jnosql.artemis.Column;
 import org.jnosql.artemis.Embeddable;
 
 import javax.ws.rs.FormParam;
+import java.util.Objects;
 
 /**
  * @author daniel
@@ -22,10 +23,6 @@ public class Address {
     @Column
     private String state;
 
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
     public String getCountry() {
         return country;
     }
@@ -34,17 +31,30 @@ public class Address {
         return state;
     }
 
-    public void setState(String state) {
-        this.state = state;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Address address = (Address) o;
+        return Objects.equals(country, address.country) &&
+                Objects.equals(state, address.state);
     }
 
-    public Address() {
-        this("", "");
+    @Override
+    public int hashCode() {
+        return Objects.hash(country, state);
     }
 
-    public Address(String state, String country) {
-        super();
-        this.country = country;
-        this.state = state;
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Address{");
+        sb.append("country='").append(country).append('\'');
+        sb.append(", state='").append(state).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }
