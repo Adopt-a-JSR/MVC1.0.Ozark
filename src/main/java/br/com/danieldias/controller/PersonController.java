@@ -61,15 +61,15 @@ public class PersonController {
     }
 
     @GET
-    @Path("update/{_id}")
-    public Viewable update(@PathParam("_id") String id) {
+    @Path("update/{id}")
+    public Viewable update(@PathParam("id") String id) {
         this.models.put("update", repository.findById(id));
         return new Viewable("change.jsp", models);
     }
 
     @GET
-    @Path("remove/{_id}")
-    public String delete(@PathParam("_id") String id) {
+    @Path("remove/{id}")
+    public String delete(@PathParam("id") String id) {
         repository.deleteById(id);
         return "redirect:mvc/show";
     }
