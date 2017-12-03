@@ -35,7 +35,7 @@ public class PersonController {
 
     @GET
     @Path("new")
-    public Viewable novo() {
+    public Viewable newElement() {
         return new Viewable("insert.jsp");
     }
 
@@ -48,7 +48,7 @@ public class PersonController {
 
     @POST
     @Path("add")
-    public String adicionar(@BeanParam Person person) {
+    public String add(@BeanParam Person person) {
         repository.save(person);
         return "redirect:mvc/show";
     }
