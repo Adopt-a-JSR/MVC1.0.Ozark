@@ -25,19 +25,19 @@
 			<th>Edit</th>
 			<th>Delete</th>
 		</tr>
-		<c:forEach items="${list}" var="people">
+		<c:forEach items="${list}" var="person">
 			<tr>
-				<td>${people._id}</td>
-				<td>${people.name}</td>
-				<td>${people.age}</td>
-				<td>${people.address.country}</td>
-				<td>${people.address.state}</td>
-				<td>${people.jugs.get(0).name}</td>
+				<td>${person.id}</td>
+				<td>${person.name}</td>
+				<td>${person.age}</td>
+				<td>${person.address.country}</td>
+				<td>${person.address.state}</td>
+				<td>${person.jugs}</td>
 				<td>
-				<textarea rows="10" cols="60" name="description" disabled="disabled"> ${people.jugs.get(0).description} </textarea>
+				<textarea rows="10" cols="60" name="description" disabled="disabled"> ${person.jugs} </textarea>
 				</td>
-				<td><a href="update/${people._id }">Edit</a></td>
-				<td><a href="remove/${people._id}">Delete</a></td>
+				<td><a href="update/${person.id}">Edit</a></td>
+				<td><a href="remove/${person.id}">Delete</a></td>
 			</tr>
 		</c:forEach>
 	</table>      

@@ -11,12 +11,12 @@
 		<fieldset style="width: 400px">
             <legend>Change of Data</legend>
    
-		<input type="text" name="_id" value="${update._id }" hidden="true"><br/><br />
+		<input type="text" name="id" value="${update.id }" hidden="true"><br/><br />
       Name:<input type="text" name="name" value="${update.name }"><br/><br /> 
       Age: <input type="number" name="age" value="${update.age }"/><br /> <br />
       Country:<input type="text" name="country"  value="${update.address.country}"><br /><br/>
       State:<input type="text" name="state"  value="${update.address.state}"><br /><br/>
-      <textarea rows="10" cols="30" name="description" disabled="disabled">${update.jugs.get(0).description}</textarea>
+      <textarea rows="10" cols="30" name="description" disabled="disabled">${update.jugs}</textarea>
       <br /><br />
       
       <input type="submit" value="Update Data">
