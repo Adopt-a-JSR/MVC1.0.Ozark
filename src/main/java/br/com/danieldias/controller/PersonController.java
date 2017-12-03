@@ -15,6 +15,11 @@ import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.WebApplicationException;
+import java.util.Optional;
+import java.util.function.Supplier;
+
+import static javax.ws.rs.core.Response.Status.NOT_FOUND;
 
 /**
  * @author daniel
@@ -26,6 +31,8 @@ import javax.ws.rs.PathParam;
 @Path("mvc")
 public class PersonController {
 
+    private static final Supplier<WebApplicationException> NOT_FOUND_EXCEPTION = () -> new WebApplicationException(NOT_FOUND);
+    
     @Inject
     private Models models;
 
@@ -63,7 +70,8 @@ public class PersonController {
     @GET
     @Path("update/{id}")
     public Viewable update(@PathParam("id") String id) {
-        this.models.put("update", repository.findById(id));
+        Optional<Person> person = repository.findById(id);
+        this.models.put("update", person.orElseThrow(NOT_FOUND_EXCEPTION));
         return new Viewable("change.jsp", models);
     }
 
