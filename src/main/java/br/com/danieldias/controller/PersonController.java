@@ -27,10 +27,10 @@ import br.com.danieldias.persistence.MongoDAO;
 public class PersonController {
 
 	@Inject
-	Models models;
+	private Models models;
 
 	@Inject
-	MongoDAO<Person> peopleDao;
+	private MongoDAO<Person> peopleDao;
 
 	@GET
 	@Path("new")
