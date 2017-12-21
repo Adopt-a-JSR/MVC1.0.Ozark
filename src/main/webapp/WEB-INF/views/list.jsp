@@ -15,7 +15,6 @@
 
 <table align="center" border="4">
     <tr bgcolor="gray">
-        <th>ID</th>
         <th>Name</th>
         <th>Age</th>
         <th>Country</th>
@@ -27,7 +26,6 @@
     </tr>
     <c:forEach items="${list}" var="person">
         <tr>
-            <td>${person.id}</td>
             <td>${person.name}</td>
             <td>${person.age}</td>
             <td>${person.address.country}</td>
