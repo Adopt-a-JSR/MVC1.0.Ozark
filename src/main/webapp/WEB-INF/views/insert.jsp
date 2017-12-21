@@ -24,7 +24,7 @@
             <textarea rows="10" cols="30" name="description">Description</textarea>
             <br/><br/>
 
-            <input type="submit" value="Register Data"/>
+            <input type="submit" value="Insert"/>
 
         </fieldset>
     </form>

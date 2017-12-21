@@ -21,7 +21,7 @@
             <textarea rows="10" cols="30" name="description">${person.description}</textarea>
             <br/><br/>
 
-            <input type="submit" value="Save">
+            <input type="submit" value="Update">
         </fieldset>
     </form>
 </div>
