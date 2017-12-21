@@ -1,7 +1,7 @@
 package br.com.danieldias.model;
 
-import org.bson.types.ObjectId;
 import org.jnosql.artemis.Column;
+import org.jnosql.artemis.Convert;
 import org.jnosql.artemis.Entity;
 import org.jnosql.artemis.Id;
 
@@ -20,7 +20,8 @@ public class Person {
 
     @FormParam("id")
     @Id
-    private ObjectId id;
+    @Convert(ObjectIdConverter.class)
+    private String id;
 
     @FormParam("name")
     @Column
@@ -42,7 +43,8 @@ public class Person {
     @Column
     private String description;
 
-    public ObjectId getId() {
+
+    public String getId() {
         return id;
     }
 
