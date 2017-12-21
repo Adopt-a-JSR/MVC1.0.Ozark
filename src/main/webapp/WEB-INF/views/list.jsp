@@ -32,7 +32,7 @@
             <td>${person.address.state}</td>
             <td>${person.jugs}</td>
             <td>
-                <textarea rows="10" cols="60" name="description" disabled="disabled"> ${person.jugs} </textarea>
+                <textarea rows="10" cols="60" name="description" disabled="disabled"> ${person.description} </textarea>
             </td>
             <td><a href="update/${person.id}">Edit</a></td>
             <td><a href="remove/${person.id}">Delete</a></td>
