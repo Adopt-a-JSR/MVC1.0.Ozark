@@ -70,7 +70,7 @@ public class PersonController {
 
     @GET
     @Path("update/{id}")
-    public Viewable update(@PathParam("id") ObjectId id) {
+    public Viewable update(@PathParam("id") String id) {
 
         Optional<Person> person = repository.findById(id);
         this.models.put("person", person.orElseThrow(NOT_FOUND_EXCEPTION));
@@ -79,7 +79,7 @@ public class PersonController {
 
     @GET
     @Path("remove/{id}")
-    public String delete(@PathParam("id") ObjectId id) {
+    public String delete(@PathParam("id") String id) {
         repository.deleteById(id);
         return "redirect:mvc/show";
     }
