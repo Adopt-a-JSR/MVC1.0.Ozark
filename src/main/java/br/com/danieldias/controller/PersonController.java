@@ -73,7 +73,7 @@ public class PersonController {
     public Viewable update(@PathParam("id") ObjectId id) {
 
         Optional<Person> person = repository.findById(id);
-        this.models.put("update", person.orElseThrow(NOT_FOUND_EXCEPTION));
+        this.models.put("person", person.orElseThrow(NOT_FOUND_EXCEPTION));
         return new Viewable("change.jsp", models);
     }
 
