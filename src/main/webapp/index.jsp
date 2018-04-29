@@ -1,19 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Index MVC</title>
+<meta charset="UTF-8">
+<title>SouJava - MVC 1.0 DEMO</title>
+<meta http-equiv="refresh" content="1;url=app/home">
 </head>
 <body>
-
-<h1 align="center">Demo JSR 371 - MVC 1.0 </h1>
-       <div align="center">
-        <ul type="none">
-            <li ><a href="app/mvc/show">List Data</a></li>
-        </ul>
-        </div>
-        <br/>
 </body>
 </html>

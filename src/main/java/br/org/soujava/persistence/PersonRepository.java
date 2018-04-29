@@ -1,7 +1,8 @@
-package br.com.danieldias.persistence;
+package br.org.soujava.persistence;
 
-import br.com.danieldias.model.Person;
 import org.jnosql.artemis.Repository;
+
+import br.org.soujava.model.Person;
 
 import java.util.List;
 

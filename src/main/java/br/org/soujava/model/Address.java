@@ -1,26 +1,29 @@
-package br.com.danieldias.model;
+package br.org.soujava.model;
+
+import java.util.Objects;
+
+import javax.mvc.binding.MvcBinding;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.ws.rs.FormParam;
 
 import org.jnosql.artemis.Column;
 import org.jnosql.artemis.Embeddable;
 
-import javax.ws.rs.FormParam;
-import java.util.Objects;
-
-/**
- * @author daniel
- * github:Daniel-Dos
- * daniel.dias.analistati@gmail.com
- * twitter:@danieldiasjava
- */
 @Embeddable
 public class Address {
 
     @FormParam("country")
     @Column
+	@NotEmpty
+	@MvcBinding
     private String country;
 
     @FormParam("state")
     @Column
+	@NotEmpty
+	@MvcBinding
     private String state;
 
     public String getCountry() {
