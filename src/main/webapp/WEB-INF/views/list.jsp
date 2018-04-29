@@ -5,39 +5,68 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Show</title>
+    <title>MVC 1.0 DEMO</title>
 </head>
 <body>
 
-<h1 align="center">Data Listing</h1>
+<jsp:include page="/templates/menu.jsp"></jsp:include>
 
-<a href="new">Add</a>
 
-<table align="center" border="4">
-    <tr bgcolor="gray">
-        <th>Name</th>
-        <th>Age</th>
-        <th>Country</th>
-        <th>State</th>
-        <th>JUGS</th>
-        <th>Description</th>
-        <th>Edit</th>
-        <th>Delete</th>
-    </tr>
-    <c:forEach items="${list}" var="person">
-        <tr>
-            <td>${person.name}</td>
-            <td>${person.age}</td>
-            <td>${person.address.country}</td>
-            <td>${person.address.state}</td>
-            <td>${person.jugs}</td>
-            <td>
-                <textarea rows="10" cols="60" name="description" disabled="disabled"> ${person.description} </textarea>
-            </td>
-            <td><a href="update/${person.id}">Edit</a></td>
-            <td><a href="remove/${person.id}">Delete</a></td>
-        </tr>
-    </c:forEach>
-</table>
+<div class="container">
+    <c:if test="${message.messageRedirect != null}">
+    <div class="row">
+        <div class="col-md-12">
+            <p class="alert alert-success" id="success-alert">${message.messageRedirect}</p>
+        </div>
+    </div>
+    </c:if>
+    <div class="row">
+	<a class="btn btn-primary" href="new">Add Registres</a>
+	<hr />
+	<table id="tableData" class="table table-bordered table-hover">
+		<thead>
+			<tr>
+				<th>Name</th>
+		        <th>Age</th>
+		        <th>Country</th>
+		        <th>State</th>
+		        <th>JUGS</th>
+		        <th>Description</th>
+		        <th></th>
+		        <th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+			 <c:forEach items="${list}" var="person">
+				<td>${person.name}</td>
+	            <td>${person.age}</td>
+	            <td>${person.address.country}</td>
+	            <td>${person.address.state}</td>
+	            <td>${person.jugs}</td>
+	            <td>${person.description}</td>
+				<td><a href="update/${person.id}" class="btn btn-info" >Edit</a></td>
+				<td><a href="remove/${person.id}"><span class="glyphicon glyphicon-trash"></span> Delete </a></td>
+			</tr>
+			 </c:forEach>
+		</tbody>
+	</table>
+</div>
+</div>
+
+	<br />
+	<br />
+	<script type="text/javascript">
+
+		$(document).ready(function() {
+			$("#success-alert").hide();
+			$().ready(function showAlert() {
+				$("#success-alert").fadeTo(2000, 500).slideUp(500, function() {
+					$("#success-alert").slideUp(500);
+				});
+			});
+		});
+	</script>
+	<jsp:include page="/templates/footer.jsp"></jsp:include>
 </body>
 </html>

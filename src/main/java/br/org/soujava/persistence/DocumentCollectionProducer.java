@@ -1,4 +1,4 @@
-package br.com.danieldias.persistence;
+package br.org.soujava.persistence;
 
 import org.jnosql.diana.api.Settings;
 import org.jnosql.diana.api.document.DocumentCollectionManager;

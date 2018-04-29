@@ -1,14 +1,8 @@
-package br.com.danieldias.model;
+package br.org.soujava.model;
 
 import org.bson.types.ObjectId;
 import org.jnosql.artemis.AttributeConverter;
 
-/**
- * @author daniel
- * github:Daniel-Dos
- * daniel.dias.analistati@gmail.com
- * twitter:@danieldiasjava
- */
 public class ObjectIdConverter implements AttributeConverter<String, ObjectId> {
 
     @Override
