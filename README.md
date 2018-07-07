@@ -18,3 +18,5 @@ Simple example of using JSR-371 together with MongoDB to do CRUD operations.
 # Docker
 
 Image pull ->  https://hub.docker.com/r/danieldiasjava/mvc-jnosql-crud/
+
+OBS: Alter 'Settings settings = Settings.builder().put("mongodb-server-host-1", "localhost:27017").build();' for "mongo:27017"
