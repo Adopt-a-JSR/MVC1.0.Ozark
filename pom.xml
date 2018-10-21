@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
 				http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.com.danieldias</groupId>
@@ -27,6 +27,11 @@
 		<dependency>
 			<groupId>org.jnosql.diana</groupId>
 			<artifactId>mongodb-driver</artifactId>
+			<version>${jnosql.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jnosql.artemis</groupId>
+			<artifactId>artemis-configuration</artifactId>
 			<version>${jnosql.version}</version>
 		</dependency>
 
@@ -79,7 +84,7 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<failOnMissingWebXml>false</failOnMissingWebXml>
-		<jnosql.version>0.0.7-SNAPSHOT</jnosql.version>
+		<jnosql.version>0.0.7</jnosql.version>
 		<ozark.version>1.0.0-SNAPSHOT</ozark.version>
 		<version.payara>1.0.1</version.payara>
 	</properties>
