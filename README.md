@@ -13,7 +13,7 @@ Simple example of using JSR-371 together with MongoDB to do CRUD operations.
 
 - Start **MongoDB** default port=27017 with the command in the Prompt / Shell: `mongod` 
 - mvn clean package payara-micro:bundle && mvn payara-micro:start
-- Test by accessing the address : http://localhost:yourdoor/MVC1.0.Ozark/
+- Test by accessing the address : http://localhost:yourdoor/MVC1.0.Krazo/
 
 # Docker
 
